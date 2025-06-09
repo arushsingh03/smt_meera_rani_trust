@@ -5,13 +5,21 @@ import { useState } from "react";
 import { sendContactEmail } from "@/utils/emailjs";
 import { toast } from "react-hot-toast";
 
+interface FormData {
+  phone: string | number | readonly string[] | undefined;
+  subject: string | number | readonly string[] | undefined;
+  name: string;
+  email: string;
+  message: string;
+}
+
 export default function Contact() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
+    message: "",
     phone: "",
     subject: "",
-    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -23,8 +31,6 @@ export default function Contact() {
       const response = await sendContactEmail({
         from_name: formData.name,
         from_email: formData.email,
-        phone: formData.phone,
-        subject: formData.subject,
         message: formData.message,
       });
 
@@ -33,14 +39,14 @@ export default function Contact() {
         setFormData({
           name: "",
           email: "",
+          message: "",
           phone: "",
           subject: "",
-          message: "",
         });
       } else {
         toast.error("Failed to send message. Please try again.");
       }
-    } catch (error) {
+    } catch {
       toast.error("An error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);
@@ -218,7 +224,7 @@ export default function Contact() {
               Send Us a Message
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Have a question or want to get involved? We'd love to hear from
+              Have a question or want to get involved? We&apos;d love to hear from
               you
             </p>
           </div>

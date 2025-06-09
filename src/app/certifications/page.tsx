@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Award, Shield, FileCheck, X, Eye, Calendar } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const certifications = [
   {
@@ -272,10 +273,12 @@ export default function Certifications() {
                       "from-emerald-50 to-teal-50"
                     } opacity-90 group-hover:opacity-0 transition-opacity duration-300 z-10`}
                   ></div>
-                  <img
+                  <Image
                     src={cert.src}
                     alt={cert.title}
                     className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700"
+                    width={500}
+                    height={300}
                   />
 
                   {/* Year Badge */}
@@ -346,10 +349,12 @@ export default function Certifications() {
         >
           <div className="relative max-w-6xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl">
             <div className="relative">
-              <img
+              <Image
                 src={selectedCertification.src}
                 alt={selectedCertification.title}
                 className="w-full h-[70vh] object-contain bg-slate-100"
+                width={1200}
+                height={800}
               />
               <button
                 className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-400 text-white rounded-full flex items-center justify-center hover:from-orange-600 hover:to-orange-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110"

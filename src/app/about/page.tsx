@@ -9,6 +9,7 @@ import {
   User,
   Users,
 } from "lucide-react";
+import Image from "next/image";
 
 const donors = [
   {
@@ -210,7 +211,13 @@ export default function About() {
             <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-8">
               <div className="text-center">
                 <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-white text-3xl mb-4 mx-auto">
-                  <img src="/logo.avif" alt="logo" className="w-full h-full" />
+                  <Image
+                    src="/logo.avif"
+                    alt="logo"
+                    width={80}
+                    height={80}
+                    className="w-full h-full"
+                  />
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-2">
                   Smt. Meera Rani Samajik Utthan Sansthan
@@ -280,7 +287,7 @@ export default function About() {
                 holistic social, cultural, educational, and mental development
                 initiatives. We are committed to enhancing community health by
                 organizing regular mobile health services and medical camps,
-                with a special focus on women's health, eye care, and dental
+                with a special focus on women&apos;s health, eye care, and dental
                 hygiene. Prioritizing the well-being of women and children, we
                 conduct targeted health awareness programs, vaccination drives,
                 and pathology camps to prevent diseases like Hepatitis-B.

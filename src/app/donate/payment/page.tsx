@@ -4,8 +4,9 @@ import { useSearchParams } from "next/navigation";
 import { ArrowLeft, CreditCard, QrCode, Shield, Award } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Suspense } from "react";
 
-export default function Payment() {
+function PaymentContent() {
   const searchParams = useSearchParams();
   const amount = searchParams.get("amount") || "0";
 
@@ -151,5 +152,13 @@ export default function Payment() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function Payment() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PaymentContent />
+    </Suspense>
   );
 } 

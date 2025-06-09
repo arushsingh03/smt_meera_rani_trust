@@ -7,7 +7,6 @@ import {
   BookOpen,
   Microscope,
   GraduationCap,
-  Calendar,
   Clock,
   MapPin,
 } from "lucide-react";
@@ -71,15 +70,15 @@ export default function Volunteer() {
 
     try {
       const response = await sendVolunteerEmail({
-        from_name: formData.name,
-        from_email: formData.email,
+        name: formData.name,
+        email: formData.email,
         phone: formData.phone,
-        age: formData.age,
+        address: "",
         occupation: formData.occupation,
-        experience: formData.experience,
+        skills: "",
         availability: formData.availability,
         interests: formData.interests,
-        subject: "New Volunteer Application",
+        message: formData.experience,
       });
 
       if (response.success) {
@@ -97,7 +96,7 @@ export default function Volunteer() {
       } else {
         toast.error("Failed to submit application. Please try again.");
       }
-    } catch (error) {
+    } catch {
       toast.error("An error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);

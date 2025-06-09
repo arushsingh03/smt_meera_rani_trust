@@ -41,7 +41,7 @@ const Footer = () => {
             {/* Mission Statement */}
             <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 backdrop-blur-sm rounded-xl p-4 border border-emerald-500/20">
               <p className="text-emerald-200 text-sm italic">
-                "Building healthier communities, one life at a time"
+                &quot;Building healthier communities, one life at a time&quot;
               </p>
             </div>
 
@@ -174,24 +174,15 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center space-x-6 text-xs text-slate-400">
-              <Link
-                href="/privacy"
-                className="hover:text-emerald-300 transition-colors"
-              >
+              <span className="hover:text-emerald-300 transition-colors">
                 Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="hover:text-emerald-300 transition-colors"
-              >
+              </span>
+              <span className="hover:text-emerald-300 transition-colors">
                 Terms of Service
-              </Link>
-              <Link
-                href="/transparency"
-                className="hover:text-emerald-300 transition-colors"
-              >
+              </span>
+              <span className="hover:text-emerald-300 transition-colors">
                 Financial Transparency
-              </Link>
+              </span>
             </div>
           </div>
         </div>

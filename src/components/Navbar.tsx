@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +26,13 @@ const Navbar = () => {
                 {/* Logo Icon */}
                 <div className="relative">
                   <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                    <span className="text-white text-xl font-bold">
-                      <img src="/logo.avif" alt="Logo" width={50} height={50} />
-                    </span>
+                    <Image
+                      src="/logo.avif"
+                      alt="SMT Meera Rani Trust Logo"
+                      width={40}
+                      height={40}
+                      className="w-10 h-10"
+                    />
                   </div>
                   <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full animate-pulse"></div>
                 </div>
@@ -46,7 +51,7 @@ const Navbar = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}

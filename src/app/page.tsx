@@ -141,8 +141,8 @@ export default function Home() {
               Our Impact in Numbers
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Measuring success through the lives we've touched and communities
-              we've transformed
+              Measuring success through the lives we&apos;ve touched and communities
+              we&apos;ve transformed
             </p>
           </div>
 

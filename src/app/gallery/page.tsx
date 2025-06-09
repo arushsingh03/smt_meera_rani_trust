@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Camera, Building2, GraduationCap, X, Play, Eye } from "lucide-react";
+import Image from "next/image";
 
 const galleryImages = [
   {
@@ -392,10 +393,12 @@ export default function Gallery() {
                       "from-emerald-50 to-teal-50"
                     } opacity-90 group-hover:opacity-0 transition-opacity duration-300 z-10`}
                   ></div>
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    width={500}
+                    height={300}
                   />
 
                   {/* Category Badge */}
@@ -468,10 +471,12 @@ export default function Gallery() {
         >
           <div className="relative max-w-6xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl">
             <div className="relative">
-              <img
+              <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 className="w-full h-[70vh] object-contain bg-slate-100"
+                width={1200}
+                height={800}
               />
               <button
                 className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-400 text-white rounded-full flex items-center justify-center hover:from-orange-600 hover:to-orange-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110"
