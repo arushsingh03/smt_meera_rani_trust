@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center">
-        <div className="absolute inset-0 bg-black/50 z-10" />
+      <section className="relative h-[700px] flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 via-teal-800/70 to-emerald-700/60 z-10" />
         <div className="absolute inset-0">
           <Image
             src="/hero.avif"
@@ -16,57 +16,110 @@ export default function Home() {
             priority
           />
         </div>
+        {/* Floating elements for visual interest */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-orange-400/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-emerald-400/20 rounded-full blur-2xl animate-pulse delay-300"></div>
+
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Empowering Communities Through Social Development
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl">
-            SMT Meera Rani Samajik Utthan Sansthan is dedicated to creating
-            positive change through sustainable development programs.
-          </p>
-          <Link
-            href="/programs"
-            className="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors"
-          >
-            Explore Our Programs
-          </Link>
+          <div className="max-w-4xl">
+            <div className="inline-block bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
+              🌟 Transforming Lives Since 1999
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-300">
+                Healing Communities,
+              </span>
+              <br />
+              <span className="text-white">Building Hope</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-10 max-w-3xl leading-relaxed text-emerald-50">
+              SMT Meera Rani Samajik Utthan Sansthan empowers communities
+              through comprehensive healthcare, education, and sustainable
+              development programs that create lasting positive change.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/programs"
+                className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-8 py-4 rounded-xl hover:from-orange-600 hover:to-orange-500 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Explore Our Impact
+              </Link>
+              <Link
+                href="/donate"
+                className="border-2 border-emerald-300 text-emerald-100 px-8 py-4 rounded-xl hover:bg-emerald-300 hover:text-emerald-900 transition-all duration-300 font-semibold"
+              >
+                Support Our Mission
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Key Programs Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Our Key Programs
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+                Our Key Programs
+              </span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Comprehensive initiatives designed to address the fundamental
+              needs of our communities
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Education",
+                title: "Healthcare & Wellness",
                 description:
-                  "Providing quality education and skill development opportunities.",
-                icon: "📚",
+                  "Providing comprehensive healthcare services, mobile clinics, and preventive care programs to ensure everyone has access to quality medical treatment.",
+                icon: "🧑‍⚕️",
+                gradient: "from-emerald-500 to-teal-500",
+                bgGradient: "from-emerald-500/10 to-teal-500/10",
               },
               {
-                title: "Healthcare",
+                title: "Education & Skills",
                 description:
-                  "Ensuring access to basic healthcare services for all.",
-                icon: "🏥",
+                  "Empowering individuals through quality education, vocational training, and skill development programs that open doors to better opportunities.",
+                icon: "📚",
+                gradient: "from-orange-500 to-amber-500",
+                bgGradient: "from-orange-500/10 to-amber-500/10",
               },
               {
                 title: "Community Development",
                 description:
-                  "Building stronger communities through sustainable initiatives.",
+                  "Building resilient communities through infrastructure development, women's empowerment, and sustainable livelihood programs.",
                 icon: "🤝",
+                gradient: "from-teal-500 to-cyan-500",
+                bgGradient: "from-teal-500/10 to-cyan-500/10",
               },
             ].map((program, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-emerald-100 overflow-hidden"
               >
-                <div className="text-4xl mb-4">{program.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{program.title}</h3>
-                <p className="text-gray-600">{program.description}</p>
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${program.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                ></div>
+                <div className="relative z-10">
+                  <div
+                    className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${program.gradient} text-white text-2xl mb-6 shadow-lg`}
+                  >
+                    {program.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-slate-800 group-hover:text-slate-900">
+                    {program.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed group-hover:text-slate-700">
+                    {program.description}
+                  </p>
+                  <div
+                    className={`mt-6 w-12 h-1 bg-gradient-to-r ${program.gradient} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                  ></div>
+                </div>
               </div>
             ))}
           </div>
@@ -74,21 +127,64 @@ export default function Home() {
       </section>
 
       {/* Impact Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Impact</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+      <section className="py-24 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-40 h-40 bg-emerald-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-400 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Our Impact in Numbers
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Measuring success through the lives we've touched and communities
+              we've transformed
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { number: "1,00,000+", label: "Lives Impacted" },
-              { number: "10,000+", label: "Health Camps Conducted" },
-              { number: "500+", label: "Active Volunteers" },
-              { number: "25+", label: "Years of Selfless Service" },
+              {
+                number: "1,00,000+",
+                label: "Lives Impacted",
+                icon: "❤️",
+                color: "from-red-400 to-pink-400",
+              },
+              {
+                number: "10,000+",
+                label: "Health Camps Conducted",
+                icon: "🏥",
+                color: "from-emerald-400 to-teal-400",
+              },
+              {
+                number: "500+",
+                label: "Active Volunteers",
+                icon: "👥",
+                color: "from-orange-400 to-amber-400",
+              },
+              {
+                number: "25+",
+                label: "Years of Service",
+                icon: "🏆",
+                color: "from-blue-400 to-cyan-400",
+              },
             ].map((stat, index) => (
-              <div key={index}>
-                <div className="text-4xl font-bold text-blue-600 mb-2">
+              <div key={index} className="text-center group">
+                <div
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${stat.color} text-white text-3xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300`}
+                >
+                  {stat.icon}
+                </div>
+                <div className="text-4xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-200">
                   {stat.number}
                 </div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-md text-slate-300 font-medium">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -96,20 +192,45 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Join Us in Making a Difference
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Together, we can create lasting positive change in our communities.
-          </p>
-          <Link
-            href="/contact"
-            className="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-gray-100 transition-colors"
-          >
-            Get Involved
-          </Link>
+      <section className="py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-orange-400/20 rounded-full blur-2xl animate-pulse delay-500"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
+              Ready to Make a Difference?
+            </h2>
+            <p className="text-xl md:text-2xl mb-12 text-emerald-100 leading-relaxed">
+              Every contribution, every volunteer hour, every shared story helps
+              us reach more communities and transform more lives. Join our
+              mission today.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link
+                href="/volunteer"
+                className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-10 py-4 rounded-xl hover:from-orange-600 hover:to-orange-500 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              >
+                Become a Volunteer
+              </Link>
+              <Link
+                href="/donate"
+                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-4 rounded-xl hover:bg-white hover:text-emerald-700 transition-all duration-300 font-bold text-lg"
+              >
+                Make a Donation
+              </Link>
+              <Link
+                href="/contact"
+                className="border-2 border-white text-white px-10 py-4 rounded-xl hover:bg-white hover:text-emerald-700 transition-all duration-300 font-bold text-lg"
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>
