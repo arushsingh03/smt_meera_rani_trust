@@ -110,7 +110,7 @@ const Footer = () => {
                 href="/donate"
                 className="inline-block bg-gradient-to-r from-orange-500 to-orange-400 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-orange-500 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm"
               >
-                💝 Support Our Cause
+                 Support Our Cause
               </Link>
             </div>
           </div>
