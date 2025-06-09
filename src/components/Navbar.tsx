@@ -27,7 +27,7 @@ const Navbar = () => {
                 <div className="relative">
                   <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                     <Image
-                      src="/logo.avif"
+                      src="/logo.png"
                       alt="SMT Meera Rani Trust Logo"
                       width={40}
                       height={40}

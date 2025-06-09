@@ -67,7 +67,7 @@ function PaymentContent() {
       </section>
 
       {/* Payment Methods Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/30">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* UPI Payment Methods */}

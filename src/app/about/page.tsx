@@ -193,7 +193,7 @@ export default function About() {
       </section>
 
       {/* Organization Details */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/30">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
@@ -212,11 +212,11 @@ export default function About() {
               <div className="text-center">
                 <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-white text-3xl mb-4 mx-auto">
                   <Image
-                    src="/logo.avif"
+                    src="/logo.png"
                     alt="logo"
                     width={80}
                     height={80}
-                    className="w-full h-full"
+                    className="w-full h-full rounded-full"
                   />
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-2">
@@ -325,7 +325,7 @@ export default function About() {
       </section>
 
       {/* Experience Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 via-emerald-50/30 to-teal-50/30">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
