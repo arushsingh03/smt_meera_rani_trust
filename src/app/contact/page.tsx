@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MapPin, Phone, User } from "lucide-react";
+import { Mail, MapPin, Phone, User, Award, Heart, Building2, Users, Clock, MapPinned } from "lucide-react";
 import { useState } from "react";
 import { sendContactEmail } from "@/utils/emailjs";
 import { toast } from "react-hot-toast";
@@ -107,15 +107,16 @@ export default function Contact() {
       <section className="relative py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl animate-pulse delay-300"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl animate-pulse delay-700"></div>
+          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/30">
-              📞 Get in Touch with Us
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-base font-semibold mb-8 border border-white/30">
+              <Mail className="w-5 h-5" />
+              <span>Get in Touch</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-emerald-200">
@@ -123,21 +124,47 @@ export default function Contact() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-emerald-100">
-              Ready to make a difference? Connect with us to learn more about
-              our programs, volunteer opportunities, or contribute to our
-              mission of social welfare.
+              Have questions about our programs or want to get involved? We'd
+              love to hear from you. Reach out to us using any of the methods
+              below.
             </p>
 
-            {/* Quick Contact Stats */}
+            {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
               {[
-                { number: "24/7", label: "Support Available", icon: "🕒" },
-                { number: "25+", label: "Years Experience", icon: "⭐" },
-                { number: "1K+", label: "Queries Resolved", icon: "✅" },
-                { number: "100%", label: "Response Rate", icon: "📈" },
+                {
+                  number: "24/7",
+                  label: "Support Available",
+                  icon: <Clock className="w-6 h-6" />,
+                  bgColor: "bg-white/20",
+                  borderColor: "border-white/30",
+                },
+                {
+                  number: "3",
+                  label: "Office Locations",
+                  icon: <MapPin className="w-6 h-6" />,
+                  bgColor: "bg-orange-500/20",
+                  borderColor: "border-orange-300/40",
+                },
+                {
+                  number: "1L+",
+                  label: "Lives Impacted",
+                  icon: <Heart className="w-6 h-6" />,
+                  bgColor: "bg-blue-500/20",
+                  borderColor: "border-blue-300/40",
+                },
+                {
+                  number: "15+",
+                  label: "Years of Service",
+                  icon: <Award className="w-6 h-6" />,
+                  bgColor: "bg-teal-500/20",
+                  borderColor: "border-teal-300/40",
+                },
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div
+                    className={`mb-3 mx-auto w-14 h-14 ${stat.bgColor} backdrop-blur-sm border ${stat.borderColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  >
                     {stat.icon}
                   </div>
                   <div className="text-2xl md:text-3xl font-bold mb-1 text-white">
@@ -214,8 +241,8 @@ export default function Contact() {
       <section className="py-24 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl animate-pulse delay-300"></div>
+          <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -367,11 +394,11 @@ export default function Contact() {
             <div className="p-8 bg-gradient-to-r from-emerald-50 to-teal-50">
               <div className="flex items-center justify-center space-x-6">
                 <div className="flex items-center space-x-2 text-slate-600">
-                  <span className="text-emerald-600">📍</span>
+                  <MapPinned className="w-5 h-5 text-emerald-600" />
                   <span className="font-medium">Exact location may vary</span>
                 </div>
                 <div className="flex items-center space-x-2 text-slate-600">
-                  <span className="text-emerald-600">📞</span>
+                  <Phone className="w-5 h-5 text-emerald-600" />
                   <span className="font-medium">
                     Call for precise directions
                   </span>
@@ -386,8 +413,8 @@ export default function Contact() {
       <section className="py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full blur-2xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-40 h-40 bg-orange-300 rounded-full blur-2xl animate-pulse delay-500"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-orange-300 rounded-full blur-2xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -424,14 +451,26 @@ export default function Contact() {
 
             {/* Trust Indicators */}
             <div className="mt-16 pt-8 border-t border-white/20">
-              <p className="text-emerald-200 text-sm mb-4">
+              <p className="text-emerald-200 text-base mb-4">
                 Trusted by communities • 80G & 12A Certified • FCRA Approved
               </p>
-              <div className="flex justify-center items-center space-x-8 text-white/60">
-                <span className="text-xs">🏆 25+ Years</span>
-                <span className="text-xs">❤️ 1L+ Lives</span>
-                <span className="text-xs">🏥 10K+ Camps</span>
-                <span className="text-xs">👥 500+ Volunteers</span>
+              <div className="flex justify-center items-center space-x-8 flex-wrap gap-y-4">
+                <div className="flex items-center space-x-2 text-white">
+                  <Award className="w-5 h-5" />
+                  <span className="text-base">25+ Years</span>
+                </div>
+                <div className="flex items-center space-x-2 text-white">
+                  <Heart className="w-5 h-5" />
+                  <span className="text-base">1L+ Lives</span>
+                </div>
+                <div className="flex items-center space-x-2 text-white">
+                  <Building2 className="w-5 h-5" />
+                  <span className="text-base">10K+ Camps</span>
+                </div>
+                <div className="flex items-center space-x-2 text-white">
+                  <Users className="w-5 h-5" />
+                  <span className="text-base">500+ Volunteers</span>
+                </div>
               </div>
             </div>
           </div>

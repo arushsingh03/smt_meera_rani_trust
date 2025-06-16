@@ -38,7 +38,9 @@ export default function Donate() {
   const router = useRouter();
   const [selectedAmount, setSelectedAmount] = useState<string>("");
   const [customAmount, setCustomAmount] = useState<string>("");
-  const [donationType, setDonationType] = useState<"one-time" | "monthly">("one-time");
+  const [donationType, setDonationType] = useState<"one-time" | "monthly">(
+    "one-time"
+  );
 
   const handleDonate = () => {
     const amount = selectedAmount || customAmount;
@@ -53,15 +55,16 @@ export default function Donate() {
       <section className="relative py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl animate-pulse delay-300"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl animate-pulse delay-700"></div>
+          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/30">
-              💖 Make a Difference
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/30">
+              <Heart className="w-5 h-5" />
+              Make a Difference
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-emerald-200">
@@ -172,10 +175,14 @@ export default function Donate() {
               onClick={handleDonate}
               disabled={!selectedAmount && !customAmount}
               className={`w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
-                (!selectedAmount && !customAmount) ? 'opacity-50 cursor-not-allowed' : ''
+                !selectedAmount && !customAmount
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
               }`}
             >
-              {donationType === "one-time" ? "Donate Now" : "Start Monthly Donation"}
+              {donationType === "one-time"
+                ? "Donate Now"
+                : "Start Monthly Donation"}
             </button>
 
             {/* Trust Indicators */}

@@ -41,7 +41,7 @@ const Navbar = () => {
                   <span className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                     SMT Meera Rani
                   </span>
-                  <span className="text-xs text-slate-500 font-medium">
+                  <span className="text-base text-slate-500 font-medium">
                     Samajik Utthan Sansthan
                   </span>
                 </div>
@@ -66,7 +66,7 @@ const Navbar = () => {
             <div className="ml-6 pl-6 border-l border-slate-200">
               <Link
                 href="/donate"
-                className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-6 py-2.5 rounded-xl hover:from-orange-600 hover:to-orange-500 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm"
+                className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-6 py-2.5 rounded-xl hover:from-orange-600 hover:to-orange-500 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-base"
               >
                 Donate Now
               </Link>

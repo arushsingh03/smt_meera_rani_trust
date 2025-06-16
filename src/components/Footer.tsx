@@ -27,7 +27,7 @@ const Footer = () => {
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-300 to-teal-300 bg-clip-text text-transparent">
                   SMT Meera Rani
                 </h3>
-                <p className="text-sm text-emerald-200">
+                <p className="text-base text-emerald-200">
                   Samajik Utthan Sansthan
                 </p>
               </div>
@@ -40,7 +40,7 @@ const Footer = () => {
 
             {/* Mission Statement */}
             <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 backdrop-blur-sm rounded-xl p-4 border border-emerald-500/20">
-              <p className="text-emerald-200 text-sm italic">
+              <p className="text-emerald-200 text-base italic">
                 &quot;Building healthier communities, one life at a time&quot;
               </p>
             </div>
@@ -108,7 +108,7 @@ const Footer = () => {
             <div className="mt-8">
               <Link
                 href="/donate"
-                className="inline-block bg-gradient-to-r from-orange-500 to-orange-400 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-orange-500 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm"
+                className="inline-block bg-gradient-to-r from-orange-500 to-orange-400 text-white px-6 py-3 rounded-xl hover:from-orange-600 hover:to-orange-500 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base"
               >
                  Support Our Cause
               </Link>
@@ -142,15 +142,15 @@ const Footer = () => {
               ].map((contact, index) => (
                 <li key={index} className="flex items-start space-x-3 group">
                   <div
-                    className={`w-8 h-8 bg-gradient-to-r ${contact.gradient} rounded-lg flex items-center justify-center text-white text-sm shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0 mt-0.5`}
+                    className={`w-8 h-8 bg-gradient-to-r ${contact.gradient} rounded-lg flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0 mt-0.5`}
                   >
                     {contact.icon}
                   </div>
                   <div>
-                    <p className="text-xs text-emerald-300 font-medium uppercase tracking-wide">
+                    <p className="text-base text-emerald-300 font-medium uppercase tracking-wide">
                       {contact.label}
                     </p>
-                    <p className="text-slate-300 text-sm leading-relaxed whitespace-pre-line">
+                    <p className="text-slate-300 text-base leading-relaxed whitespace-pre-line">
                       {contact.value}
                     </p>
                   </div>
@@ -164,16 +164,16 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-slate-700/50">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
-              <p className="text-slate-400 text-sm">
+              <p className="text-slate-400 text-base">
                 &copy; {new Date().getFullYear()} SMT Meera Rani Samajik Utthan
                 Sansthan. All rights reserved.
               </p>
-              <p className="text-slate-500 text-xs mt-1">
+              <p className="text-slate-500 text-base mt-1">
                 Registered NGO | 80G & 12A Certified | FCRA Approved
               </p>
             </div>
 
-            <div className="flex items-center space-x-6 text-xs text-slate-400">
+            <div className="flex items-center space-x-6 text-base text-slate-400">
               <span className="hover:text-emerald-300 transition-colors">
                 Privacy Policy
               </span>

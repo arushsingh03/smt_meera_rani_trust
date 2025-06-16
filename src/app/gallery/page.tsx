@@ -1,7 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Camera, Building2, GraduationCap, X, Play, Eye } from "lucide-react";
+import {
+  Camera,
+  Building2,
+  GraduationCap,
+  X,
+  Play,
+  Eye,
+  Calendar,
+  Code,
+  Dna,
+} from "lucide-react";
 import Image from "next/image";
 
 const galleryImages = [
@@ -154,15 +164,16 @@ export default function Gallery() {
       <section className="relative py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl animate-pulse delay-300"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl animate-pulse delay-700"></div>
+          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-block bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/30">
-              📸 Visual Journey of Impact
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-base font-semibold mb-8 border border-white/30">
+              <Camera className="w-5 h-5" />
+              <span>Visual Journey of Impact</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-emerald-200">
@@ -178,25 +189,39 @@ export default function Gallery() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
               {[
-                { number: "12", label: "Featured Photos", icon: "📸" },
+                {
+                  number: "12",
+                  label: "Featured Photos",
+                  icon: <Camera className="w-6 h-6" />,
+                  bgColor: "bg-white/20",
+                  borderColor: "border-white/30",
+                },
                 {
                   number: "2",
                   label: "Program Areas",
-                  icon: "🧑‍💻",
+                  icon: <Code className="w-6 h-6" />,
+                  bgColor: "bg-orange-500/20",
+                  borderColor: "border-orange-300/40",
                 },
                 {
                   number: "25+",
                   label: "Years Documented",
-                  icon: "🗓️",
+                  icon: <Calendar className="w-6 h-6" />,
+                  bgColor: "bg-blue-500/20",
+                  borderColor: "border-blue-300/40",
                 },
                 {
                   number: "1L+",
                   label: "Lives Captured",
-                  icon: "🧬",
+                  icon: <Dna className="w-6 h-6" />,
+                  bgColor: "bg-teal-500/20",
+                  borderColor: "border-teal-300/40",
                 },
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div
+                    className={`mb-3 mx-auto w-14 h-14 ${stat.bgColor} backdrop-blur-sm border ${stat.borderColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  >
                     {stat.icon}
                   </div>
                   <div className="text-2xl md:text-3xl font-bold mb-1 text-white">
@@ -270,7 +295,7 @@ export default function Gallery() {
                 {/* Action Button */}
                 <div className="flex items-center justify-between">
                   <div className="w-16 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                  <a 
+                  <a
                     href="https://www.youtube.com/watch?v=dlgzm31ABVU"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -289,8 +314,8 @@ export default function Gallery() {
       <section className="py-16 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl animate-pulse delay-300"></div>
+          <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -445,8 +470,8 @@ export default function Gallery() {
                   </p>
 
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2 text-slate-500 text-xs">
-                      <Building2 className="w-3 h-3" />
+                    <div className="flex items-center space-x-2 text-slate-500 text-base">
+                      <Building2 className="w-4 h-4" />
                       <span>{image.location}</span>
                     </div>
                     <div

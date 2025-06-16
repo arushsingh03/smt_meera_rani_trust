@@ -1,5 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Star,
+  Stethoscope,
+  BookOpen,
+  Handshake,
+  Heart,
+  Building2,
+  Users,
+  Trophy,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -9,7 +19,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 via-teal-800/70 to-emerald-700/60 z-10" />
         <div className="absolute inset-0">
           <Image
-            src="/hero.avif"
+            src="/hero.png"
             alt="Hero Background"
             fill
             className="object-cover"
@@ -22,8 +32,8 @@ export default function Home() {
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
           <div className="max-w-4xl">
-            <div className="inline-block bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
-              🌟 Transforming Lives Since 1999
+            <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
+              <Star className="w-4 h-4 mr-2" /> Transforming Lives Since 1999
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-300">
@@ -76,7 +86,7 @@ export default function Home() {
                 title: "Healthcare & Wellness",
                 description:
                   "Providing comprehensive healthcare services, mobile clinics, and preventive care programs to ensure everyone has access to quality medical treatment.",
-                icon: "🧑‍⚕️",
+                icon: <Stethoscope className="w-8 h-8" />,
                 gradient: "from-emerald-500 to-teal-500",
                 bgGradient: "from-emerald-500/10 to-teal-500/10",
               },
@@ -84,7 +94,7 @@ export default function Home() {
                 title: "Education & Skills",
                 description:
                   "Empowering individuals through quality education, vocational training, and skill development programs that open doors to better opportunities.",
-                icon: "📚",
+                icon: <BookOpen className="w-8 h-8" />,
                 gradient: "from-orange-500 to-amber-500",
                 bgGradient: "from-orange-500/10 to-amber-500/10",
               },
@@ -92,7 +102,7 @@ export default function Home() {
                 title: "Community Development",
                 description:
                   "Building resilient communities through infrastructure development, women's empowerment, and sustainable livelihood programs.",
-                icon: "🤝",
+                icon: <Handshake className="w-8 h-8" />,
                 gradient: "from-teal-500 to-cyan-500",
                 bgGradient: "from-teal-500/10 to-cyan-500/10",
               },
@@ -141,8 +151,8 @@ export default function Home() {
               Our Impact in Numbers
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Measuring success through the lives we&apos;ve touched and communities
-              we&apos;ve transformed
+              Measuring success through the lives we&apos;ve touched and
+              communities we&apos;ve transformed
             </p>
           </div>
 
@@ -151,38 +161,42 @@ export default function Home() {
               {
                 number: "1,00,000+",
                 label: "Lives Impacted",
-                icon: "❤️",
-                color: "from-red-400 to-pink-400",
+                icon: <Heart className="w-6 h-6 text-white" />,
+                bgColor: "bg-white/20",
+                borderColor: "border-white/30",
               },
               {
                 number: "10,000+",
                 label: "Health Camps Conducted",
-                icon: "🏥",
-                color: "from-emerald-400 to-teal-400",
+                icon: <Building2 className="w-6 h-6 text-white" />,
+                bgColor: "bg-orange-500/20",
+                borderColor: "border-orange-300/40",
               },
               {
                 number: "500+",
                 label: "Active Volunteers",
-                icon: "👥",
-                color: "from-orange-400 to-amber-400",
+                icon: <Users className="w-6 h-6 text-white" />,
+                bgColor: "bg-blue-500/20",
+                borderColor: "border-blue-300/40",
               },
               {
                 number: "25+",
                 label: "Years of Service",
-                icon: "🏆",
-                color: "from-blue-400 to-cyan-400",
+                icon: <Trophy className="w-6 h-6 text-white" />,
+                bgColor: "bg-teal-500/20",
+                borderColor: "border-teal-300/40",
               },
             ].map((stat, index) => (
               <div key={index} className="text-center group">
                 <div
-                  className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${stat.color} text-white text-3xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300`}
+                  className={`mb-3 mx-auto w-14 h-14 ${stat.bgColor} backdrop-blur-sm border ${stat.borderColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                 >
                   {stat.icon}
                 </div>
                 <div className="text-4xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-200">
                   {stat.number}
                 </div>
-                <div className="text-md text-slate-300 font-medium">
+                <div className="text-sm text-emerald-200">
                   {stat.label}
                 </div>
               </div>

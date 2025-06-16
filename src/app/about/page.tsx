@@ -8,83 +8,103 @@ import {
   Pin,
   User,
   Users,
+  Globe,
+  Heart,
+  Award,
+  Handshake,
+  Star,
+  GraduationCap,
+  TrendingUp,
+  Building,
+  Package,
+  Briefcase,
+  Settings,
+  Factory,
+  Sparkles,
+  Link,
+  Car,
+  Cookie,
+  Construction,
+  Landmark as BuildingIcon,
+  Eye,
+  Target,
 } from "lucide-react";
 import Image from "next/image";
 
 const donors = [
   {
     name: "All India womens Conference Kanpur",
-    icon: "👥",
+    icon: <Users className="w-5 h-5" />,
     gradient: "from-emerald-500 to-teal-500",
   },
   {
     name: "Sah Aziz Dharmarth Hospital Kanpur",
-    icon: "🏥",
+    icon: <Building2 className="w-5 h-5" />,
     gradient: "from-blue-500 to-cyan-500",
   },
   {
     name: "Ghadi Detergent Pvt. Ltd. Kanpur",
-    icon: "🧼",
+    icon: <Package className="w-5 h-5" />,
     gradient: "from-purple-500 to-indigo-500",
   },
   {
     name: "Gopal Das Sahab Dayal Sons, Kanpur",
-    icon: "🏢",
+    icon: <Building className="w-5 h-5" />,
     gradient: "from-orange-500 to-amber-500",
   },
   {
     name: "Shivam Masala Pvt. Ltd. Kanpur",
-    icon: "🌶️",
+    icon: <Package className="w-5 h-5" />,
     gradient: "from-red-500 to-pink-500",
   },
   {
     name: "Sapna Trading Company Kanpur",
-    icon: "📦",
+    icon: <Package className="w-5 h-5" />,
     gradient: "from-teal-500 to-emerald-500",
   },
   {
     name: "Zaz Tannery Kanpur",
-    icon: "🧳",
+    icon: <Briefcase className="w-5 h-5" />,
     gradient: "from-amber-500 to-orange-500",
   },
   {
     name: "Inner Wheel Club, Kanpur",
-    icon: "⚙️",
+    icon: <Settings className="w-5 h-5" />,
     gradient: "from-indigo-500 to-purple-500",
   },
   {
     name: "J.S. International Kanpur",
-    icon: "🌍",
+    icon: <Globe className="w-5 h-5" />,
     gradient: "from-cyan-500 to-blue-500",
   },
   {
     name: "Super Tannery (INDIA) Ltd. Kanpur",
-    icon: "🏭",
+    icon: <Factory className="w-5 h-5" />,
     gradient: "from-pink-500 to-red-500",
   },
   {
     name: "Calico Trends Kanpur",
-    icon: "✨",
+    icon: <Sparkles className="w-5 h-5" />,
     gradient: "from-emerald-500 to-teal-500",
   },
   {
     name: "Lex International Pvt. Ltd. Kanpur",
-    icon: "🔗",
+    icon: <Link className="w-5 h-5" />,
     gradient: "from-blue-500 to-cyan-500",
   },
   {
     name: "Maruti Car",
-    icon: "🚗",
+    icon: <Car className="w-5 h-5" />,
     gradient: "from-orange-500 to-amber-500",
   },
   {
     name: "Parle Biscuit Pvt. Ltd.",
-    icon: "🍪",
+    icon: <Cookie className="w-5 h-5" />,
     gradient: "from-purple-500 to-indigo-500",
   },
   {
     name: "G P L Industries",
-    icon: "🏗️",
+    icon: <Construction className="w-5 h-5" />,
     gradient: "from-teal-500 to-emerald-500",
   },
 ];
@@ -93,7 +113,7 @@ const organizationDetails = [
   {
     label: "Name of the NGO",
     value: "Smt. Meera Rani Samajik Utthan Sansthan",
-    icon: "🏛️",
+    icon: <BuildingIcon className="w-5 h-5" />,
   },
   {
     label: "President",
@@ -149,36 +169,63 @@ export default function About() {
       <section className="relative py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl animate-pulse delay-300"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl animate-pulse delay-700"></div>
+          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/30">
-              🌟 Empowering Communities Since 1998
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-base font-semibold mb-8 border border-white/30">
+              <Star className="w-5 h-5" />
+              <span>Established in 1998</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-emerald-200">
-                About Us
+                About Our Trust
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-emerald-100">
-              Learn about our mission, vision, and the dedicated team behind our
-              social impact initiatives transforming lives across communities.
+              Committed to improving lives through healthcare, education, and
+              community development since 1998.
             </p>
 
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
               {[
-                { number: "25+", label: "Years of Service", icon: "⏰" },
-                { number: "1L+", label: "Lives Transformed", icon: "❤️" },
-                { number: "500+", label: "Communities Served", icon: "🏘️" },
-                { number: "15+", label: "Trusted Partners", icon: "🤝" },
+                {
+                  number: "25+",
+                  label: "Years of Service",
+                  icon: <Globe className="w-6 h-6" />,
+                  bgColor: "bg-white/20",
+                  borderColor: "border-white/30",
+                },
+                {
+                  number: "1000+",
+                  label: "Projects Completed",
+                  icon: <Award className="w-6 h-6" />,
+                  bgColor: "bg-orange-500/20",
+                  borderColor: "border-orange-300/40",
+                },
+                {
+                  number: "1L+",
+                  label: "Lives Transformed",
+                  icon: <Heart className="w-6 h-6" />,
+                  bgColor: "bg-blue-500/20",
+                  borderColor: "border-blue-300/40",
+                },
+                {
+                  number: "50+",
+                  label: "Team Members",
+                  icon: <Users className="w-6 h-6" />,
+                  bgColor: "bg-teal-500/20",
+                  borderColor: "border-teal-300/40",
+                },
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div
+                    className={`mb-3 mx-auto w-14 h-14 ${stat.bgColor} backdrop-blur-sm border ${stat.borderColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  >
                     {stat.icon}
                   </div>
                   <div className="text-2xl md:text-3xl font-bold mb-1 text-white">
@@ -258,8 +305,8 @@ export default function About() {
       <section className="py-24 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl animate-pulse delay-300"></div>
+          <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -277,8 +324,8 @@ export default function About() {
             {/* Mission */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 hover:border-emerald-500/50 transition-all duration-300 group">
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-2xl flex items-center justify-center text-white text-2xl shadow-xl group-hover:scale-110 transition-transform duration-300">
-                  🎯
+                <div className="w-16 h-16 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300">
+                  <Target className="w-8 h-8" />
                 </div>
                 <h3 className="text-3xl font-bold text-white">Our Mission</h3>
               </div>
@@ -302,8 +349,8 @@ export default function About() {
             {/* Vision */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 hover:border-orange-500/50 transition-all duration-300 group">
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-amber-400 rounded-2xl flex items-center justify-center text-white text-2xl shadow-xl group-hover:scale-110 transition-transform duration-300">
-                  👁️
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-amber-400 rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300">
+                  <Eye className="w-8 h-8" />
                 </div>
                 <h3 className="text-3xl font-bold text-white">Our Vision</h3>
               </div>
@@ -341,8 +388,8 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="bg-white rounded-3xl shadow-2xl p-8 border border-slate-100">
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-xl">
-                  🎓
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-xl">
+                  <GraduationCap className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800">
                   Training Partnership
@@ -361,8 +408,8 @@ export default function About() {
 
             <div className="bg-white rounded-3xl shadow-2xl p-8 border border-slate-100">
               <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-xl">
-                  📈
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center text-white shadow-xl">
+                  <TrendingUp className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800">
                   Growth Journey
@@ -389,8 +436,8 @@ export default function About() {
       <section className="py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full blur-2xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-40 h-40 bg-orange-300 rounded-full blur-2xl animate-pulse delay-500"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-orange-300 rounded-full blur-2xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -411,7 +458,7 @@ export default function About() {
               >
                 <div className="flex items-center space-x-4">
                   <div
-                    className={`w-12 h-12 bg-gradient-to-r ${donor.gradient} rounded-xl flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-12 h-12 bg-gradient-to-r ${donor.gradient} rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}
                   >
                     {donor.icon}
                   </div>
@@ -427,57 +474,94 @@ export default function About() {
 
           {/* Trust Indicators */}
           <div className="mt-16 pt-8 border-t border-white/20 text-center">
-            <p className="text-emerald-200 text-sm mb-4">
+            <p className="text-emerald-200 text-base mb-4">
               Trusted partnerships • Transparent operations • Community focused
             </p>
-            <div className="flex justify-center items-center space-x-8 text-white/60">
-              <span className="text-xs">🤝 15+ Partners</span>
-              <span className="text-xs">💎 25+ Years Trust</span>
-              <span className="text-xs">🏆 Proven Impact</span>
-              <span className="text-xs">🌟 Community Recognition</span>
+            <div className="flex justify-center items-center space-x-8 flex-wrap gap-y-4">
+              <div className="flex items-center space-x-2 text-white">
+                <Handshake className="w-5 h-5" />
+                <span className="text-base">15+ Partners</span>
+              </div>
+              <div className="flex items-center space-x-2 text-white">
+                <Award className="w-5 h-5" />
+                <span className="text-base">25+ Years Trust</span>
+              </div>
+              <div className="flex items-center space-x-2 text-white">
+                <Star className="w-5 h-5" />
+                <span className="text-base">Proven Impact</span>
+              </div>
+              <div className="flex items-center space-x-2 text-white">
+                <Users className="w-5 h-5" />
+                <span className="text-base">Community Recognition</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl animate-pulse delay-300"></div>
+      <section className="py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-orange-300 rounded-full blur-2xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
-              Join Our Mission
+              Ready to Join Our Mission?
             </h2>
-            <p className="text-xl md:text-2xl mb-12 text-slate-300 leading-relaxed">
-              Together, we can create lasting positive change in our
-              communities. Your support and involvement can make a real
-              difference.
+            <p className="text-xl md:text-2xl mb-12 text-emerald-100 leading-relaxed">
+              Together, we can create meaningful change. Partner with us to
+              transform communities and build a healthier, more sustainable
+              future.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
                 href="/volunteer"
-                className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-10 py-4 rounded-xl hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-10 py-4 rounded-xl hover:from-orange-600 hover:to-orange-500 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
-                 Get Involved
+                Become a Volunteer
               </a>
               <a
-                href="/programs"
-                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-4 rounded-xl hover:bg-white hover:text-slate-700 transition-all duration-300 font-bold text-lg"
+                href="/donate"
+                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-4 rounded-xl hover:bg-white hover:text-emerald-700 transition-all duration-300 font-bold text-lg"
               >
-                 View Programs
+                Support Our Cause
               </a>
               <a
                 href="/contact"
-                className="border-2 border-white text-white px-10 py-4 rounded-xl hover:bg-white hover:text-slate-700 transition-all duration-300 font-bold text-lg"
+                className="border-2 border-white text-white px-10 py-4 rounded-xl hover:bg-white hover:text-emerald-700 transition-all duration-300 font-bold text-lg"
               >
-                 Contact Us
+                Get in Touch
               </a>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="mt-16 pt-8 border-t border-white/20">
+              <p className="text-emerald-200 text-base mb-4">
+                Trusted by communities • 80G & 12A Certified • FCRA Approved
+              </p>
+              <div className="flex justify-center items-center space-x-8 flex-wrap gap-y-4">
+                <div className="flex items-center space-x-2 text-white">
+                  <Handshake className="w-5 h-5" />
+                  <span className="text-base">15+ Partners</span>
+                </div>
+                <div className="flex items-center space-x-2 text-white">
+                  <Award className="w-5 h-5" />
+                  <span className="text-base">25+ Years Trust</span>
+                </div>
+                <div className="flex items-center space-x-2 text-white">
+                  <Star className="w-5 h-5" />
+                  <span className="text-base">Proven Impact</span>
+                </div>
+                <div className="flex items-center space-x-2 text-white">
+                  <Users className="w-5 h-5" />
+                  <span className="text-base">Community Recognition</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

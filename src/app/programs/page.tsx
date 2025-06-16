@@ -1,4 +1,19 @@
 import Image from "next/image";
+import {
+  GraduationCap,
+  Home,
+  Building2,
+  Handshake,
+  Building,
+  Megaphone,
+  Target,
+  Clock,
+  Heart,
+  Award,
+  User,
+  Shield,
+  Sprout,
+} from "lucide-react";
 
 const programs = [
   {
@@ -7,7 +22,7 @@ const programs = [
       "Children are the backbone of the nation. Since 1998, a Mobile Medical Team has been conducting comprehensive health check-ups for students from Nursery to Degree College (around 30,000 annually) in government and private institutions. The program includes regular check-ups, health cards, prompt treatment, follow-ups, and focuses on issues related to teeth, eyes, ears, nose, throat, and overall physical and mental health.",
     image: "/program1.avif",
     impact: "500+ students supported annually",
-    icon: "🎓",
+    icon: <GraduationCap className="w-5 h-5" />,
     category: "Education & Health",
     gradient: "from-emerald-500 to-teal-500",
     bgGradient: "from-emerald-50 to-teal-50",
@@ -18,7 +33,7 @@ const programs = [
       "In June 2006, the U.P. Health Systems Development Project assigned our NGO to serve nine villages in Shivrajpur Block, Bilhour Tehsil, Kanpur Nagar. The goal is to provide preventive healthcare to underserved women, children, and the poor in remote areas. Services include antenatal and postnatal care, immunization, and health education for 1,106 families (6,292 people) to reduce maternal and infant mortality.",
     image: "/program2.avif",
     impact: "1000+ health camps",
-    icon: "🏘️",
+    icon: <Home className="w-5 h-5" />,
     category: "Rural Healthcare",
     gradient: "from-orange-500 to-amber-500",
     bgGradient: "from-orange-50 to-amber-50",
@@ -29,7 +44,7 @@ const programs = [
       "We are conducting many Health Camps such as School/College/Institution Health Camps, Public Health Camps, Blood Donation Camps, Pathology Camps, Vaccination Camps, etc. During these camps, expert doctors provide complete medical check-ups for HIV-AIDS, cancer, heart diseases, and other fatal and chronic illnesses. These camps play a vital role in early detection, timely treatment, and raising health awareness in the community.",
     image: "/program5.avif",
     impact: "10,000+ lives healed by health camps",
-    icon: "🏥",
+    icon: <Building2 className="w-5 h-5" />,
     category: "Public Health",
     gradient: "from-blue-500 to-cyan-500",
     bgGradient: "from-blue-50 to-cyan-50",
@@ -40,7 +55,7 @@ const programs = [
       'Health Check-up Programme started by the organization during 2002 for the staff and workers of the factory. A Camp for the factory workers was organized in April, 2006 under the banner of "Ranbaxy Laboratories Ltd." Urology Division, Gurgaon (Haryana), a renowned pharmaceutical company.',
     image: "/program3.avif",
     impact: "100+ annual industrial checkups",
-    icon: "🏭",
+    icon: <Building className="w-5 h-5" />,
     category: "Occupational Health",
     gradient: "from-purple-500 to-indigo-500",
     bgGradient: "from-purple-50 to-indigo-50",
@@ -51,7 +66,7 @@ const programs = [
       "Our NGO also worked in the field of Leprosy Project. It continues to be a great social and Public Health Problem because of some reasons. It is a chronic infectious disease. The fear of Leprosy is without parallel, it is mainly due to the deformities and dis-figuration on human health caused by the disease.",
     image: "/program4.avif",
     impact: "10+ villages supported",
-    icon: "🤝",
+    icon: <Handshake className="w-5 h-5" />,
     category: "Disease Control",
     gradient: "from-teal-500 to-emerald-500",
     bgGradient: "from-teal-50 to-emerald-50",
@@ -62,7 +77,7 @@ const programs = [
       "Camps in Kanpur Block educated people about AIDS causes and prevention. Through road shows and village meetings, the campaign raised awareness, reduced stigma, and promoted safe practices, empowering communities to protect themselves and their families, improving health outcomes significantly.",
     image: "/program6.jpg",
     impact: "5,000+ educated on AIDS awareness",
-    icon: "📢",
+    icon: <Megaphone className="w-5 h-5" />,
     category: "Health Education",
     gradient: "from-red-500 to-pink-500",
     bgGradient: "from-red-50 to-pink-50",
@@ -76,15 +91,16 @@ export default function Programs() {
       <section className="relative py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl animate-pulse delay-300"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl animate-pulse delay-700"></div>
+          <div className="absolute top-20 left-20 w-40 h-40 bg-orange-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-teal-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-emerald-300 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/30">
-              🌟 Transformative Healthcare Programs
+            <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
+              <Award className="w-5 h-5" />
+              <span>Transformative Healthcare Programs</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-emerald-200">
@@ -100,19 +116,47 @@ export default function Programs() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
               {[
-                { number: "6", label: "Active Programs", icon: "🎯" },
-                { number: "25+", label: "Years Experience", icon: "⏰" },
-                { number: "1L+", label: "Lives Impacted", icon: "❤️" },
-                { number: "500+", label: "Villages Served", icon: "🏘️" },
+                {
+                  number: "6",
+                  label: "Active Programs",
+                  icon: <Target className="w-6 h-6" />,
+                  bgColor: "bg-white/20",
+                  borderColor: "border-white/30",
+                },
+                {
+                  number: "25+",
+                  label: "Years Experience",
+                  icon: <Clock className="w-6 h-6" />,
+                  bgColor: "bg-white/20",
+                  borderColor: "border-white/30",
+                },
+                {
+                  number: "1L+",
+                  label: "Lives Impacted",
+                  icon: <Heart className="w-6 h-6" />,
+                  bgColor: "bg-white/20",
+                  borderColor: "border-white/30",
+                },
+                {
+                  number: "500+",
+                  label: "Villages Served",
+                  icon: <Home className="w-6 h-6" />,
+                  bgColor: "bg-white/20",
+                  borderColor: "border-white/30",
+                },
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div
+                    className={`mb-3 mx-auto w-14 h-14 ${stat.bgColor} backdrop-blur-sm border ${stat.borderColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  >
                     {stat.icon}
                   </div>
                   <div className="text-2xl md:text-3xl font-bold mb-1 text-white">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-emerald-200">{stat.label}</div>
+                  <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-1 rounded-full text-sm font-semibold mt-6 shadow-lg">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -175,7 +219,7 @@ export default function Programs() {
                 <div className="p-8">
                   <div className="flex items-center space-x-3 mb-4">
                     <div
-                      className={`w-12 h-12 bg-gradient-to-r ${program.gradient} rounded-xl flex items-center justify-center text-white text-xl shadow-lg`}
+                      className={`w-12 h-12 bg-gradient-to-r ${program.gradient} rounded-xl flex items-center justify-center text-white shadow-lg`}
                     >
                       {program.icon}
                     </div>
@@ -210,8 +254,8 @@ export default function Programs() {
       <section className="py-24 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl animate-pulse delay-300"></div>
+          <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-orange-400 rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -236,7 +280,7 @@ export default function Programs() {
                   "1L+ Lives Impacted",
                   "500+ Villages Served",
                 ],
-                icon: "🏥",
+                icon: <Building2 className="w-6 h-6" />,
                 gradient: "from-emerald-400 to-teal-400",
               },
               {
@@ -248,7 +292,7 @@ export default function Programs() {
                   "5,000+ AIDS Awareness",
                   "1,000+ Rural Camps",
                 ],
-                icon: "🛡️",
+                icon: <Shield className="w-6 h-6" />,
                 gradient: "from-orange-400 to-amber-400",
               },
               {
@@ -260,7 +304,7 @@ export default function Programs() {
                   "6 Major Programs",
                   "100+ Industrial Checkups",
                 ],
-                icon: "🌱",
+                icon: <Sprout className="w-6 h-6" />,
                 gradient: "from-blue-400 to-cyan-400",
               },
             ].map((impact, index) => (
@@ -269,7 +313,7 @@ export default function Programs() {
                 className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 hover:border-slate-500/50 transition-all duration-300"
               >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-r ${impact.gradient} rounded-2xl flex items-center justify-center text-white text-2xl mb-6 shadow-xl`}
+                  className={`w-16 h-16 bg-gradient-to-r ${impact.gradient} rounded-2xl flex items-center justify-center text-white mb-6 shadow-xl`}
                 >
                   {impact.icon}
                 </div>
@@ -299,55 +343,56 @@ export default function Programs() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 relative overflow-hidden">
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-white rounded-full blur-2xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-40 h-40 bg-orange-300 rounded-full blur-2xl animate-pulse delay-500"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
-              Want to Support Our Programs?
+            <h2 className="text-4xl font-bold mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+                Ready to Get Involved?
+              </span>
             </h2>
-            <p className="text-xl md:text-2xl mb-12 text-emerald-100 leading-relaxed">
-              Join us in our mission to create positive change. Your support can
-              make a real difference in transforming lives and building
-              healthier communities.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-12">
+              Join our mission to transform healthcare and education in rural
+              communities
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
-                href="/volunteer"
-                className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-10 py-4 rounded-xl hover:from-orange-600 hover:to-orange-500 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-              >
-                 Become a Volunteer
-              </a>
-              <a
                 href="/donate"
-                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-4 rounded-xl hover:bg-white hover:text-emerald-700 transition-all duration-300 font-bold text-lg"
+                className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-10 py-4 rounded-xl hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
-                 Support Our Cause
+                Make a Donation
               </a>
               <a
-                href="/contact"
-                className="border-2 border-white text-white px-10 py-4 rounded-xl hover:bg-white hover:text-emerald-700 transition-all duration-300 font-bold text-lg"
+                href="/volunteer"
+                className="bg-white border-2 border-emerald-500 text-emerald-600 px-10 py-4 rounded-xl hover:bg-emerald-50 transition-all duration-300 font-bold text-lg"
               >
-                 Get in Touch
+                Become a Volunteer
               </a>
             </div>
 
             {/* Trust Indicators */}
-            <div className="mt-16 pt-8 border-t border-white/20">
-              <p className="text-emerald-200 text-sm mb-4">
+            <div className="mt-16 pt-8 border-t border-slate-200">
+              <p className="text-emerald-700 text-base mb-4">
                 Trusted by communities • 80G & 12A Certified • FCRA Approved
               </p>
-              <div className="flex justify-center items-center space-x-8 text-white/60">
-                <span className="text-xs">🏆 25+ Years</span>
-                <span className="text-xs">❤️ 1L+ Lives</span>
-                <span className="text-xs">🏥 10K+ Camps</span>
-                <span className="text-xs">👥 500+ Volunteers</span>
+              <div className="flex justify-center items-center space-x-8 text-slate-700">
+                <div className="flex items-center space-x-2 text-base">
+                  <Award className="w-5 h-5 text-emerald-600" />
+                  <span>25+ Years</span>
+                </div>
+                <div className="flex items-center space-x-2 text-base">
+                  <Heart className="w-5 h-5 text-emerald-600" />
+                  <span>1L+ Lives</span>
+                </div>
+                <div className="flex items-center space-x-2 text-base">
+                  <Building2 className="w-5 h-5 text-emerald-600" />
+                  <span>10K+ Camps</span>
+                </div>
+                <div className="flex items-center space-x-2 text-base">
+                  <User className="w-5 h-5 text-emerald-600" />
+                  <span>500+ Volunteers</span>
+                </div>
               </div>
             </div>
           </div>
