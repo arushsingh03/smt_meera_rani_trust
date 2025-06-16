@@ -124,7 +124,7 @@ export default function Contact() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-emerald-100">
-              Have questions about our programs or want to get involved? We'd
+              Have questions about our programs or want to get involved? We&apos;d
               love to hear from you. Reach out to us using any of the methods
               below.
             </p>
