@@ -1,6 +1,17 @@
 "use client";
 
-import { Mail, MapPin, Phone, User, Award, Heart, Building2, Users, Clock, MapPinned } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  User,
+  Award,
+  Heart,
+  Building2,
+  Users,
+  Clock,
+  MapPinned,
+} from "lucide-react";
 import { useState } from "react";
 import { sendContactEmail } from "@/utils/emailjs";
 import { toast } from "react-hot-toast";
@@ -114,8 +125,8 @@ export default function Contact() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-base font-semibold mb-8 border border-white/30">
-              <Mail className="w-5 h-5" />
+            <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
+              <Mail className="w-5 h-5 mr-2" />
               <span>Get in Touch</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
@@ -124,9 +135,9 @@ export default function Contact() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-emerald-100">
-              Have questions about our programs or want to get involved? We&apos;d
-              love to hear from you. Reach out to us using any of the methods
-              below.
+              Have questions about our programs or want to get involved?
+              We&apos;d love to hear from you. Reach out to us using any of the
+              methods below.
             </p>
 
             {/* Quick Stats */}
@@ -136,41 +147,71 @@ export default function Contact() {
                   number: "24/7",
                   label: "Support Available",
                   icon: <Clock className="w-6 h-6" />,
-                  bgColor: "bg-white/20",
-                  borderColor: "border-white/30",
+                  iconColor: "text-white",
+                  glassGradient: "from-white/25 via-white/10 to-white/5",
+                  borderGradient: "from-white/40 via-white/20 to-white/10",
                 },
                 {
                   number: "3",
                   label: "Office Locations",
                   icon: <MapPin className="w-6 h-6" />,
-                  bgColor: "bg-orange-500/20",
-                  borderColor: "border-orange-300/40",
+                  iconColor: "text-white",
+                  glassGradient: "from-orange-400/25 via-orange-400/10 to-orange-400/5",
+                  borderGradient: "from-orange-300/40 via-orange-300/20 to-orange-300/10",
                 },
                 {
                   number: "1L+",
                   label: "Lives Impacted",
                   icon: <Heart className="w-6 h-6" />,
-                  bgColor: "bg-blue-500/20",
-                  borderColor: "border-blue-300/40",
+                  iconColor: "text-white",
+                  glassGradient: "from-pink-400/25 via-pink-400/10 to-pink-400/5",
+                  borderGradient: "from-pink-300/40 via-pink-300/20 to-pink-300/10",
                 },
                 {
                   number: "15+",
                   label: "Years of Service",
                   icon: <Award className="w-6 h-6" />,
-                  bgColor: "bg-teal-500/20",
-                  borderColor: "border-teal-300/40",
+                  iconColor: "text-white",
+                  glassGradient: "from-teal-400/25 via-teal-400/10 to-teal-400/5",
+                  borderGradient: "from-teal-300/40 via-teal-300/20 to-teal-300/10",
                 },
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
                   <div
-                    className={`mb-3 mx-auto w-14 h-14 ${stat.bgColor} backdrop-blur-sm border ${stat.borderColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                    className="mb-3 mx-auto w-16 h-16 backdrop-blur-xl rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-2xl group-hover:shadow-3xl relative overflow-hidden border"
+                    style={{
+                      background: `linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%)`,
+                      border: `1px solid rgba(255,255,255,0.3)`,
+                      boxShadow: `
+                        0 8px 32px rgba(0,0,0,0.2),
+                        inset 0 1px 0 rgba(255,255,255,0.3),
+                        inset 0 -1px 0 rgba(255,255,255,0.1)
+                      `,
+                      borderRadius: "16px",
+                    }}
                   >
-                    {stat.icon}
+                    {/* Glass highlight effect */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-50"
+                      style={{ borderRadius: "16px" }}
+                    ></div>
+                    {/* Animated shimmer */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"
+                      style={{ borderRadius: "16px" }}
+                    ></div>
+                    <span
+                      className={`${stat.iconColor} relative z-10 drop-shadow-lg`}
+                    >
+                      {stat.icon}
+                    </span>
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold mb-1 text-white">
+                  <div className="text-2xl md:text-3xl font-bold mb-1 text-white drop-shadow-lg">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-emerald-200">{stat.label}</div>
+                  <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-1 rounded-full text-sm font-semibold mt-6 shadow-lg backdrop-blur-sm">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -251,8 +292,8 @@ export default function Contact() {
               Send Us a Message
             </h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Have a question or want to get involved? We&apos;d love to hear from
-              you
+              Have a question or want to get involved? We&apos;d love to hear
+              from you
             </p>
           </div>
 

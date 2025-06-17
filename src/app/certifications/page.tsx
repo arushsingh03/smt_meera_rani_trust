@@ -1,7 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Award, Shield, FileCheck, X, Eye, Calendar, Building, FileText, CheckCircle, Trophy } from "lucide-react";
+import {
+  Award,
+  Shield,
+  FileCheck,
+  X,
+  Eye,
+  Calendar,
+  Building,
+  FileText,
+  CheckCircle,
+  Trophy,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,50 +20,56 @@ const certifications = [
   {
     src: "/12A.webp",
     title: "12-A Certificate",
-    description: "Certification granted to NGOs for tax exemption under section 12A of the Income Tax Act, confirming the organization's legal status and compliance.",
+    description:
+      "Certification granted to NGOs for tax exemption under section 12A of the Income Tax Act, confirming the organization's legal status and compliance.",
     year: "2002",
     category: "Tax Exemption",
-    authority: "Income Tax Department"
+    authority: "Income Tax Department",
   },
   {
-    src: "/society.webp", 
+    src: "/society.webp",
     title: "Society Registration",
-    description: "Official registration of the organization as a society under the Societies Registration Act, establishing its legal identity.",
+    description:
+      "Official registration of the organization as a society under the Societies Registration Act, establishing its legal identity.",
     year: "2018",
     category: "Legal Registration",
-    authority: "Registrar of Societies"
+    authority: "Registrar of Societies",
   },
   {
     src: "/FCRA.webp",
-    title: "FCRA Registration", 
-    description: "Registration under the Foreign Contribution Regulation Act allowing the NGO to receive foreign donations legally and transparently.",
+    title: "FCRA Registration",
+    description:
+      "Registration under the Foreign Contribution Regulation Act allowing the NGO to receive foreign donations legally and transparently.",
     year: "2017",
     category: "Foreign Donations",
-    authority: "Ministry of Home Affairs"
+    authority: "Ministry of Home Affairs",
   },
   {
     src: "/NITI.webp",
     title: "Neeti Ayog",
-    description: "Recognition by NITI Aayog for the organization's effective contributions towards national development and policy implementation.",
-    year: "2018", 
+    description:
+      "Recognition by NITI Aayog for the organization's effective contributions towards national development and policy implementation.",
+    year: "2018",
     category: "Government Recognition",
-    authority: "NITI Aayog"
+    authority: "NITI Aayog",
   },
   {
     src: "/Shipping.avif",
     title: "D.G. Shipping Govt. of India",
-    description: "Certification issued by Directorate General of Shipping acknowledging compliance with maritime and shipping regulations.",
+    description:
+      "Certification issued by Directorate General of Shipping acknowledging compliance with maritime and shipping regulations.",
     year: "2002",
-    category: "Maritime Compliance", 
-    authority: "Directorate General of Shipping"
+    category: "Maritime Compliance",
+    authority: "Directorate General of Shipping",
   },
   {
     src: "/pan.avif",
     title: "PAN Card Of NGO",
-    description: "Permanent Account Number (PAN) issued to the NGO for tax purposes and financial identification.",
+    description:
+      "Permanent Account Number (PAN) issued to the NGO for tax purposes and financial identification.",
     year: "2017",
     category: "Financial ID",
-    authority: "Income Tax Department"
+    authority: "Income Tax Department",
   },
 ];
 
@@ -67,16 +84,25 @@ const categories = [
   {
     name: "Tax Exemption",
     icon: Shield,
-    gradient: "from-orange-500 to-amber-500", 
+    gradient: "from-orange-500 to-amber-500",
     bgGradient: "from-orange-50 to-amber-50",
-    count: certifications.filter((cert) => cert.category === "Tax Exemption" || cert.category === "Financial ID").length,
+    count: certifications.filter(
+      (cert) =>
+        cert.category === "Tax Exemption" || cert.category === "Financial ID"
+    ).length,
   },
   {
     name: "Legal Registration",
     icon: FileCheck,
     gradient: "from-blue-500 to-cyan-500",
-    bgGradient: "from-blue-50 to-cyan-50", 
-    count: certifications.filter((cert) => cert.category === "Legal Registration" || cert.category === "Foreign Donations" || cert.category === "Government Recognition" || cert.category === "Maritime Compliance").length,
+    bgGradient: "from-blue-50 to-cyan-50",
+    count: certifications.filter(
+      (cert) =>
+        cert.category === "Legal Registration" ||
+        cert.category === "Foreign Donations" ||
+        cert.category === "Government Recognition" ||
+        cert.category === "Maritime Compliance"
+    ).length,
   },
 ];
 
@@ -91,14 +117,25 @@ type Certification = {
 
 export default function Certifications() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedCertification, setSelectedCertification] = useState<Certification | null>(null);
+  const [selectedCertification, setSelectedCertification] =
+    useState<Certification | null>(null);
 
   const filteredCertifications =
     selectedCategory === "All"
       ? certifications
-      : selectedCategory === "Tax Exemption" 
-        ? certifications.filter((cert) => cert.category === "Tax Exemption" || cert.category === "Financial ID")
-        : certifications.filter((cert) => cert.category === "Legal Registration" || cert.category === "Foreign Donations" || cert.category === "Government Recognition" || cert.category === "Maritime Compliance");
+      : selectedCategory === "Tax Exemption"
+      ? certifications.filter(
+          (cert) =>
+            cert.category === "Tax Exemption" ||
+            cert.category === "Financial ID"
+        )
+      : certifications.filter(
+          (cert) =>
+            cert.category === "Legal Registration" ||
+            cert.category === "Foreign Donations" ||
+            cert.category === "Government Recognition" ||
+            cert.category === "Maritime Compliance"
+        );
 
   const selectedCategoryData = categories.find(
     (cat) => cat.name === selectedCategory
@@ -117,8 +154,8 @@ export default function Certifications() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-base font-semibold mb-8 border border-white/30">
-              <Trophy className="w-5 h-5" />
+            <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
+              <Trophy className="w-5 h-5 mr-2" />
               <span>Official Certifications & Recognition</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
@@ -127,7 +164,9 @@ export default function Certifications() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-emerald-100">
-              Discover our journey of excellence through official recognitions and certifications that validate our commitment to transparency and social impact.
+              Discover our journey of excellence through official recognitions
+              and certifications that validate our commitment to transparency
+              and social impact.
             </p>
 
             {/* Quick Stats */}
@@ -137,41 +176,71 @@ export default function Certifications() {
                   number: "6",
                   label: "Certifications",
                   icon: <FileText className="w-6 h-6" />,
-                  bgColor: "bg-white/20",
-                  borderColor: "border-white/30",
+                  iconColor: "text-white",
+                  glassGradient: "from-white/25 via-white/10 to-white/5",
+                  borderGradient: "from-white/40 via-white/20 to-white/10",
                 },
                 {
                   number: "3",
                   label: "Categories",
                   icon: <Building className="w-6 h-6" />,
-                  bgColor: "bg-orange-500/20",
-                  borderColor: "border-orange-300/40",
+                  iconColor: "text-white",
+                  glassGradient: "from-orange-400/25 via-orange-400/10 to-orange-400/5",
+                  borderGradient: "from-orange-300/40 via-orange-300/20 to-orange-300/10",
                 },
                 {
                   number: "20+",
                   label: "Years Certified",
                   icon: <Calendar className="w-6 h-6" />,
-                  bgColor: "bg-blue-500/20",
-                  borderColor: "border-blue-300/40",
+                  iconColor: "text-white",
+                  glassGradient: "from-pink-400/25 via-pink-400/10 to-pink-400/5",
+                  borderGradient: "from-pink-300/40 via-pink-300/20 to-pink-300/10",
                 },
                 {
                   number: "100%",
                   label: "Compliance",
                   icon: <CheckCircle className="w-6 h-6" />,
-                  bgColor: "bg-teal-500/20",
-                  borderColor: "border-teal-300/40",
+                  iconColor: "text-white",
+                  glassGradient: "from-teal-400/25 via-teal-400/10 to-teal-400/5",
+                  borderGradient: "from-teal-300/40 via-teal-300/20 to-teal-300/10",
                 },
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
                   <div
-                    className={`mb-3 mx-auto w-14 h-14 ${stat.bgColor} backdrop-blur-sm border ${stat.borderColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                    className="mb-3 mx-auto w-16 h-16 backdrop-blur-xl rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-2xl group-hover:shadow-3xl relative overflow-hidden border"
+                    style={{
+                      background: `linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%)`,
+                      border: `1px solid rgba(255,255,255,0.3)`,
+                      boxShadow: `
+                        0 8px 32px rgba(0,0,0,0.2),
+                        inset 0 1px 0 rgba(255,255,255,0.3),
+                        inset 0 -1px 0 rgba(255,255,255,0.1)
+                      `,
+                      borderRadius: "16px",
+                    }}
                   >
-                    {stat.icon}
+                    {/* Glass highlight effect */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-50"
+                      style={{ borderRadius: "16px" }}
+                    ></div>
+                    {/* Animated shimmer */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"
+                      style={{ borderRadius: "16px" }}
+                    ></div>
+                    <span
+                      className={`${stat.iconColor} relative z-10 drop-shadow-lg`}
+                    >
+                      {stat.icon}
+                    </span>
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold mb-1 text-white">
+                  <div className="text-2xl md:text-3xl font-bold mb-1 text-white drop-shadow-lg">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-emerald-200">{stat.label}</div>
+                  <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-1 rounded-full text-sm font-semibold mt-6 shadow-lg backdrop-blur-sm">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -193,7 +262,8 @@ export default function Certifications() {
               Explore by Category
             </h2>
             <p className="text-lg text-slate-300">
-              Filter our certifications to see specific compliance areas and legal recognition
+              Filter our certifications to see specific compliance areas and
+              legal recognition
             </p>
           </div>
 
@@ -267,8 +337,9 @@ export default function Certifications() {
               </span>
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              {filteredCertifications.length} certifications showcasing our commitment to{" "}
-              {selectedCategory.toLowerCase()} compliance and excellence
+              {filteredCertifications.length} certifications showcasing our
+              commitment to {selectedCategory.toLowerCase()} compliance and
+              excellence
             </p>
           </div>
 
@@ -420,7 +491,8 @@ export default function Certifications() {
             Be Part of Excellence
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto text-emerald-100 leading-relaxed">
-            Join our journey of creating positive change and earning recognition for meaningful contributions to society.
+            Join our journey of creating positive change and earning recognition
+            for meaningful contributions to society.
           </p>
           <Link
             href="/volunteer"

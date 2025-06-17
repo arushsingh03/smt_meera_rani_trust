@@ -161,42 +161,70 @@ export default function Home() {
               {
                 number: "1,00,000+",
                 label: "Lives Impacted",
-                icon: <Heart className="w-6 h-6 text-white" />,
-                bgColor: "bg-white/20",
-                borderColor: "border-white/30",
+                icon: <Heart className="w-6 h-6" />,
+                iconColor: "text-white",
+                glassGradient: "from-white/25 via-white/10 to-white/5",
+                borderGradient: "from-white/40 via-white/20 to-white/10",
               },
               {
                 number: "10,000+",
                 label: "Health Camps Conducted",
-                icon: <Building2 className="w-6 h-6 text-white" />,
-                bgColor: "bg-orange-500/20",
-                borderColor: "border-orange-300/40",
+                icon: <Building2 className="w-6 h-6" />,
+                iconColor: "text-white",
+                glassGradient: "from-orange-400/25 via-orange-400/10 to-orange-400/5",
+                borderGradient: "from-orange-300/40 via-orange-300/20 to-orange-300/10",
               },
               {
                 number: "500+",
                 label: "Active Volunteers",
-                icon: <Users className="w-6 h-6 text-white" />,
-                bgColor: "bg-blue-500/20",
-                borderColor: "border-blue-300/40",
+                icon: <Users className="w-6 h-6" />,
+                iconColor: "text-white",
+                glassGradient: "from-pink-400/25 via-pink-400/10 to-pink-400/5",
+                borderGradient: "from-pink-300/40 via-pink-300/20 to-pink-300/10",
               },
               {
                 number: "25+",
                 label: "Years of Service",
-                icon: <Trophy className="w-6 h-6 text-white" />,
-                bgColor: "bg-teal-500/20",
-                borderColor: "border-teal-300/40",
+                icon: <Trophy className="w-6 h-6" />,
+                iconColor: "text-white",
+                glassGradient: "from-teal-400/25 via-teal-400/10 to-teal-400/5",
+                borderGradient: "from-teal-300/40 via-teal-300/20 to-teal-300/10",
               },
             ].map((stat, index) => (
               <div key={index} className="text-center group">
                 <div
-                  className={`mb-3 mx-auto w-14 h-14 ${stat.bgColor} backdrop-blur-sm border ${stat.borderColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  className="mb-3 mx-auto w-16 h-16 backdrop-blur-xl rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-2xl group-hover:shadow-3xl relative overflow-hidden border"
+                  style={{
+                    background: `linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%)`,
+                    border: `1px solid rgba(255,255,255,0.3)`,
+                    boxShadow: `
+                      0 8px 32px rgba(0,0,0,0.2),
+                      inset 0 1px 0 rgba(255,255,255,0.3),
+                      inset 0 -1px 0 rgba(255,255,255,0.1)
+                    `,
+                    borderRadius: "16px",
+                  }}
                 >
-                  {stat.icon}
+                  {/* Glass highlight effect */}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-50"
+                    style={{ borderRadius: "16px" }}
+                  ></div>
+                  {/* Animated shimmer */}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"
+                    style={{ borderRadius: "16px" }}
+                  ></div>
+                  <span
+                    className={`${stat.iconColor} relative z-10 drop-shadow-lg`}
+                  >
+                    {stat.icon}
+                  </span>
                 </div>
-                <div className="text-4xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-200">
+                <div className="text-4xl md:text-4xl font-bold mb-1 text-white drop-shadow-lg">
                   {stat.number}
                 </div>
-                <div className="text-sm text-emerald-200">
+                <div className="inline-flex items-center bg-gradient-to-r from-white/20 to-white/30 text-white px-4 py-1 rounded-full text-sm font-semibold mt-6 shadow-lg backdrop-blur-sm">
                   {stat.label}
                 </div>
               </div>

@@ -45,12 +45,12 @@ function PaymentContent() {
           <div className="text-center max-w-4xl mx-auto space-x-10">
             <Link
               href="/donate"
-              className="inline-flex items-center space-x-2 text-emerald-100 hover:text-white transition-colors duration-300 mb-8"
+              className="inline-flex items-center bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Donation</span>
             </Link>
-            <div className="inline-block bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/30">
+            <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
               <CreditCard className="w-4 h-4 inline mr-2" />
               Secure Payment
             </div>
@@ -62,6 +62,82 @@ function PaymentContent() {
             <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-emerald-100">
               Choose your preferred payment method to complete your donation of ₹{amount}
             </p>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+              {[
+                {
+                  number: "100%",
+                  label: "Secure Payments",
+                  icon: <Shield className="w-6 h-6" />,
+                  iconColor: "text-white",
+                  glassGradient: "from-white/25 via-white/10 to-white/5",
+                  borderGradient: "from-white/40 via-white/20 to-white/10",
+                },
+                {
+                  number: "3",
+                  label: "Payment Options",
+                  icon: <CreditCard className="w-6 h-6" />,
+                  iconColor: "text-white",
+                  glassGradient: "from-orange-400/25 via-orange-400/10 to-orange-400/5",
+                  borderGradient: "from-orange-300/40 via-orange-300/20 to-orange-300/10",
+                },
+                {
+                  number: "0%",
+                  label: "Processing Fee",
+                  icon: <Award className="w-6 h-6" />,
+                  iconColor: "text-white",
+                  glassGradient: "from-pink-400/25 via-pink-400/10 to-pink-400/5",
+                  borderGradient: "from-pink-300/40 via-pink-300/20 to-pink-300/10",
+                },
+                {
+                  number: "24/7",
+                  label: "Support",
+                  icon: <QrCode className="w-6 h-6" />,
+                  iconColor: "text-white",
+                  glassGradient: "from-teal-400/25 via-teal-400/10 to-teal-400/5",
+                  borderGradient: "from-teal-300/40 via-teal-300/20 to-teal-300/10",
+                },
+              ].map((stat, index) => (
+                <div key={index} className="text-center group">
+                  <div
+                    className="mb-3 mx-auto w-16 h-16 backdrop-blur-xl rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-2xl group-hover:shadow-3xl relative overflow-hidden border"
+                    style={{
+                      background: `linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%)`,
+                      border: `1px solid rgba(255,255,255,0.3)`,
+                      boxShadow: `
+                        0 8px 32px rgba(0,0,0,0.2),
+                        inset 0 1px 0 rgba(255,255,255,0.3),
+                        inset 0 -1px 0 rgba(255,255,255,0.1)
+                      `,
+                      borderRadius: "16px",
+                    }}
+                  >
+                    {/* Glass highlight effect */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent opacity-50"
+                      style={{ borderRadius: "16px" }}
+                    ></div>
+                    {/* Animated shimmer */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"
+                      style={{ borderRadius: "16px" }}
+                    ></div>
+                    <span
+                      className={`${stat.iconColor} relative z-10 drop-shadow-lg`}
+                    >
+                      {stat.icon}
+                    </span>
+                  </div>
+                  <div className="text-2xl md:text-3xl font-bold mb-1 text-white drop-shadow-lg">
+                    {stat.number}
+                  </div>
+                  <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-1 rounded-full text-sm font-semibold mt-6 shadow-lg backdrop-blur-sm">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
