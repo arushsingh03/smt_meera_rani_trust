@@ -483,7 +483,7 @@ export default function Certifications() {
       {/* Call to Action */}
       <section className="bg-gradient-to-r from-emerald-600 to-teal-700 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-block bg-white/20 backdrop-blur-sm text-emerald-100 px-6 py-3 rounded-full text-sm font-semibold mb-8 border border-white/30">
+          <div className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-lg">
             <Award className="w-4 h-4 inline mr-2" />
             Join Our Mission
           </div>
@@ -496,7 +496,7 @@ export default function Certifications() {
           </p>
           <Link
             href="/volunteer"
-            className="inline-block bg-white text-emerald-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-emerald-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-block bg-white text-emerald-600 px-6 py-2 rounded-full font-semibold text-lg hover:bg-emerald-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
             Get Involved Today
           </Link>
