@@ -157,12 +157,12 @@ export default function Donate() {
       </section>
 
       {/* Donation Form Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-slate-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12">
             {/* Donation Type Selection */}
             <div className="mb-8">
-              <h3 className="text-xl font-semibold text-slate-800 mb-4">
+              <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">
                 Select Donation Type
               </h3>
               <div className="grid grid-cols-2 gap-4">
@@ -170,8 +170,8 @@ export default function Donate() {
                   onClick={() => setDonationType("one-time")}
                   className={`p-4 rounded-xl border-2 transition-all duration-300 ${
                     donationType === "one-time"
-                      ? "border-emerald-500 bg-emerald-50 text-emerald-700"
-                      : "border-slate-200 hover:border-emerald-200"
+                      ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                      : "border-slate-200 dark:border-slate-600 hover:border-emerald-200 dark:hover:border-emerald-700 dark:text-slate-300"
                   }`}
                 >
                   <CreditCard className="w-6 h-6 mb-2" />
@@ -181,8 +181,8 @@ export default function Donate() {
                   onClick={() => setDonationType("monthly")}
                   className={`p-4 rounded-xl border-2 transition-all duration-300 ${
                     donationType === "monthly"
-                      ? "border-emerald-500 bg-emerald-50 text-emerald-700"
-                      : "border-slate-200 hover:border-emerald-200"
+                      ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                      : "border-slate-200 dark:border-slate-600 hover:border-emerald-200 dark:hover:border-emerald-700 dark:text-slate-300"
                   }`}
                 >
                   <Banknote className="w-6 h-6 mb-2" />
@@ -193,7 +193,7 @@ export default function Donate() {
 
             {/* Amount Selection */}
             <div className="mb-8">
-              <h3 className="text-xl font-semibold text-slate-800 mb-4">
+              <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">
                 Select Amount
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -206,13 +206,13 @@ export default function Donate() {
                     }}
                     className={`p-4 rounded-xl border-2 transition-all duration-300 ${
                       selectedAmount === option.amount.toString()
-                        ? "border-emerald-500 bg-emerald-50 text-emerald-700"
-                        : "border-slate-200 hover:border-emerald-200"
+                        ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
+                        : "border-slate-200 dark:border-slate-600 hover:border-emerald-200 dark:hover:border-emerald-700"
                     }`}
                   >
-                    <div className="text-emerald-600 mb-2">{option.icon}</div>
-                    <div className="font-bold text-lg">₹{option.amount}</div>
-                    <div className="text-sm text-slate-600 mt-1">
+                    <div className="text-emerald-600 dark:text-emerald-400 mb-2">{option.icon}</div>
+                    <div className="font-bold text-lg text-slate-900 dark:text-white">₹{option.amount}</div>
+                    <div className="text-sm text-slate-700 dark:text-slate-300 mt-1">
                       {option.description}
                     </div>
                   </button>
@@ -223,12 +223,12 @@ export default function Donate() {
               <div className="mt-4">
                 <label
                   htmlFor="customAmount"
-                  className="block text-sm font-medium text-slate-700 mb-2"
+                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
                 >
                   Custom Amount
                 </label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400">
                     ₹
                   </span>
                   <input
@@ -240,7 +240,7 @@ export default function Donate() {
                       setSelectedAmount("");
                     }}
                     placeholder="Enter amount"
-                    className="w-full pl-8 pr-4 py-3 rounded-xl border-2 border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all duration-300"
+                    className="w-full pl-8 pr-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all duration-300 text-slate-900 dark:text-white dark:bg-slate-800 dark:placeholder-slate-400"
                   />
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function Donate() {
             </button>
 
             {/* Trust Indicators */}
-            <div className="mt-8 flex items-center justify-center space-x-4 text-slate-500">
+            <div className="mt-8 flex items-center justify-center space-x-4 text-slate-500 dark:text-slate-400">
               <div className="flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 <span className="text-sm">Secure Payment</span>
