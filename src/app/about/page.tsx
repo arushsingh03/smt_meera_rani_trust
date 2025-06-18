@@ -40,12 +40,12 @@ const donors = [
   {
     name: "Sah Aziz Dharmarth Hospital Kanpur",
     icon: <Building2 className="w-5 h-5" />,
-    gradient: "from-blue-500 to-cyan-500",
+    gradient: "from-emerald-500 to-teal-500",
   },
   {
     name: "Ghadi Detergent Pvt. Ltd. Kanpur",
     icon: <Package className="w-5 h-5" />,
-    gradient: "from-purple-500 to-indigo-500",
+    gradient: "from-emerald-500 to-teal-500",
   },
   {
     name: "Gopal Das Sahab Dayal Sons, Kanpur",
@@ -55,17 +55,17 @@ const donors = [
   {
     name: "Shivam Masala Pvt. Ltd. Kanpur",
     icon: <Package className="w-5 h-5" />,
-    gradient: "from-red-500 to-pink-500",
+    gradient: "from-orange-500 to-amber-500",
   },
   {
     name: "Sapna Trading Company Kanpur",
     icon: <Package className="w-5 h-5" />,
-    gradient: "from-teal-500 to-emerald-500",
+    gradient: "from-orange-500 to-amber-500",
   },
   {
     name: "Zaz Tannery Kanpur",
     icon: <Briefcase className="w-5 h-5" />,
-    gradient: "from-amber-500 to-orange-500",
+    gradient: "from-indigo-500 to-purple-500",
   },
   {
     name: "Inner Wheel Club, Kanpur",
@@ -75,17 +75,17 @@ const donors = [
   {
     name: "J.S. International Kanpur",
     icon: <Globe className="w-5 h-5" />,
-    gradient: "from-cyan-500 to-blue-500",
+    gradient: "from-indigo-500 to-purple-500",
   },
   {
     name: "Super Tannery (INDIA) Ltd. Kanpur",
     icon: <Factory className="w-5 h-5" />,
-    gradient: "from-pink-500 to-red-500",
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
     name: "Calico Trends Kanpur",
     icon: <Sparkles className="w-5 h-5" />,
-    gradient: "from-emerald-500 to-teal-500",
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
     name: "Lex International Pvt. Ltd. Kanpur",
@@ -95,17 +95,17 @@ const donors = [
   {
     name: "Maruti Car",
     icon: <Car className="w-5 h-5" />,
-    gradient: "from-orange-500 to-amber-500",
+    gradient: "from-red-500 to-rose-500",
   },
   {
     name: "Parle Biscuit Pvt. Ltd.",
     icon: <Cookie className="w-5 h-5" />,
-    gradient: "from-purple-500 to-indigo-500",
+    gradient: "from-red-500 to-rose-500",
   },
   {
     name: "G P L Industries",
     icon: <Construction className="w-5 h-5" />,
-    gradient: "from-teal-500 to-emerald-500",
+    gradient: "from-red-500 to-rose-500",
   },
 ];
 

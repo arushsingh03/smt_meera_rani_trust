@@ -341,7 +341,7 @@ export default function Gallery() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-16 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 relative overflow-hidden">
+      <section className="py-10 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-40 h-40 bg-emerald-400 rounded-full blur-3xl"></div>
@@ -349,71 +349,41 @@ export default function Gallery() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               Explore by Category
             </h2>
-            <p className="text-lg text-slate-300">
+            <p className="text-lg text-slate-300 mb-6">
               Filter our gallery to see specific program areas and their impact
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {categories.map((category) => {
-              const IconComponent = category.icon;
-              const isActive = selectedCategory === category.name;
-              return (
-                <button
-                  key={category.name}
-                  onClick={() => setSelectedCategory(category.name)}
-                  className={`group relative p-6 rounded-2xl transition-all duration-300 transform hover:-translate-y-2 ${
-                    isActive
-                      ? `bg-gradient-to-r ${category.gradient} text-white shadow-2xl`
-                      : "bg-slate-800/50 backdrop-blur-sm text-white hover:bg-slate-700/50 border border-slate-600/30"
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <div
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        isActive
-                          ? "bg-white/20"
-                          : `bg-gradient-to-r ${category.gradient}`
-                      } shadow-lg`}
-                    >
-                      <IconComponent className="w-6 h-6 text-white" />
-                    </div>
-                    <div
-                      className={`text-2xl font-bold ${
-                        isActive ? "text-white" : "text-slate-300"
-                      }`}
-                    >
-                      {category.count}
-                    </div>
-                  </div>
-                  <h3
-                    className={`text-xl font-bold mb-2 ${
-                      isActive ? "text-white" : "text-slate-200"
+            
+            <div className="inline-flex flex-wrap justify-center gap-4">
+              {categories.map((category) => {
+                const IconComponent = category.icon;
+                const isActive = selectedCategory === category.name;
+                return (
+                  <button
+                    key={category.name}
+                    onClick={() => setSelectedCategory(category.name)}
+                    className={`px-6 py-3 rounded-full transition-all duration-300 flex items-center space-x-2 ${
+                      isActive
+                        ? `bg-gradient-to-r ${category.gradient} text-white shadow-lg`
+                        : "bg-slate-800/70 text-white hover:bg-slate-700/70 border border-slate-600/30"
                     }`}
                   >
-                    {category.name}
-                  </h3>
-                  <p
-                    className={`text-sm ${
-                      isActive ? "text-white/80" : "text-slate-400"
-                    }`}
-                  >
-                    {category.name === "All"
-                      ? "All program areas"
-                      : category.name === "Industry"
-                      ? "Industrial health programs"
-                      : "School-based initiatives"}
-                  </p>
-                  {isActive && (
-                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full shadow-lg"></div>
-                  )}
-                </button>
-              );
-            })}
+                    <IconComponent className="w-5 h-5" />
+                    <span className="font-medium">{category.name}</span>
+                    {category.count > 0 && (
+                      <span className={`ml-2 px-2 py-0.5 rounded-full text-xs ${
+                        isActive ? "bg-white/20" : "bg-slate-600"
+                      }`}>
+                        {category.count}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -442,12 +412,6 @@ export default function Gallery() {
               >
                 {/* Image Section */}
                 <div className="relative h-56 overflow-hidden">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${
-                      selectedCategoryData?.bgGradient ||
-                      "from-emerald-50 to-teal-50"
-                    } opacity-90 group-hover:opacity-0 transition-opacity duration-300 z-10`}
-                  ></div>
                   <Image
                     src={image.src}
                     alt={image.alt}
